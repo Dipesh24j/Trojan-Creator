@@ -1,0 +1,44 @@
++++++++++++
+Python News
++++++++++++
+
+What's New in Python 2.7.18 final?
+==================================
+
+*Release date: 2020-04-19*
+
+There were no new changes in version 2.7.18.
+
+
+
+What's New in Python 2.7.18 release candidate 1?
+================================================
+
+*Release date: 2020-04-04*
+
+Security
+--------
+
+- bpo-38945: Newline characters have been escaped when performing uu
+  encoding to prevent them from overflowing into to content section of the
+  encoded file. This prevents malicious or accidental modification of data
+  during the decoding process.
+
+- bpo-38804: Fixes a ReDoS vulnerability in :mod:`http.cookiejar`. Patch by
+  Ben Caller.
+
+Core and Builtins
+-----------------
+
+- bpo-38535: Fixed line numbers and column offsets for AST nodes for calls
+  without arguments in decorators.
+
+Library
+-------
+
+- bpo-38576: Disallow control characters in hostnames in http.client,
+  addressing CVE-2019-18348. Such potentially malicious header injection
+  URLs now cause a InvalidURL to be raised.
+
+- bpo-27973: Fix urllib.urlretrieve failing on subsequent ftp transfers from
+  the same host.
